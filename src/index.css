@@ -1,7 +1,6 @@
 @import "tailwindcss";
 @import "tw-animate-css";
-
-/* Import Google Fonts for Industrial Modernism */
+/* يجب أن يكون استيراد الخطوط هنا مباشرة بعد التايلوند وقبل أي متغيرات */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap');
 
 @custom-variant dark (&:is(.dark *));
@@ -48,7 +47,7 @@
 :root {
   /* Industrial Modernism Color Palette */
   --primary: oklch(0.35 0.15 15); /* Metallic Red */
-  --primary-foreground: oklch(0.98 0.001 0); /* White */
+  --primary-foreground: oklch(0.98 0.001 0); 
   --sidebar-primary: oklch(0.35 0.15 15);
   --sidebar-primary-foreground: oklch(0.98 0.001 0);
   --chart-1: oklch(0.35 0.15 15);
@@ -57,24 +56,24 @@
   --chart-4: oklch(0.35 0.15 15);
   --chart-5: oklch(0.20 0.05 0);
   --radius: 0.35rem;
-  --background: oklch(0.98 0.001 0); /* Off-white */
-  --foreground: oklch(0.15 0.02 0); /* Dark gray-black */
-  --card: oklch(0.96 0.002 0); /* Light gray */
+  --background: oklch(0.98 0.001 0); 
+  --foreground: oklch(0.15 0.02 0); 
+  --card: oklch(0.96 0.002 0); 
   --card-foreground: oklch(0.15 0.02 0);
   --popover: oklch(0.98 0.001 0);
   --popover-foreground: oklch(0.15 0.02 0);
-  --secondary: oklch(0.25 0.08 0); /* Dark gray */
+  --secondary: oklch(0.25 0.08 0); 
   --secondary-foreground: oklch(0.98 0.001 0);
-  --muted: oklch(0.88 0.003 0); /* Medium gray */
+  --muted: oklch(0.88 0.003 0); 
   --muted-foreground: oklch(0.45 0.05 0);
-  --accent: oklch(0.35 0.15 15); /* Metallic Red */
+  --accent: oklch(0.35 0.15 15); 
   --accent-foreground: oklch(0.98 0.001 0);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.985 0 0);
   --border: oklch(0.88 0.003 0);
   --input: oklch(0.92 0.004 0);
   --ring: oklch(0.35 0.15 15);
-  --sidebar: oklch(0.15 0.02 0); /* Dark background */
+  --sidebar: oklch(0.15 0.02 0); 
   --sidebar-foreground: oklch(0.98 0.001 0);
   --sidebar-accent: oklch(0.35 0.15 15);
   --sidebar-accent-foreground: oklch(0.98 0.001 0);
@@ -83,14 +82,13 @@
 }
 
 .dark {
-  /* Industrial Modernism Dark Theme */
   --primary: oklch(0.35 0.15 15);
   --primary-foreground: oklch(0.98 0.001 0);
   --sidebar-primary: oklch(0.35 0.15 15);
   --sidebar-primary-foreground: oklch(0.98 0.001 0);
-  --background: oklch(0.12 0.02 0); /* Very dark gray */
-  --foreground: oklch(0.95 0.001 0); /* Almost white */
-  --card: oklch(0.18 0.02 0); /* Dark card */
+  --background: oklch(0.12 0.02 0); 
+  --foreground: oklch(0.95 0.001 0); 
+  --card: oklch(0.18 0.02 0); 
   --card-foreground: oklch(0.95 0.001 0);
   --popover: oklch(0.18 0.02 0);
   --popover-foreground: oklch(0.95 0.001 0);
@@ -129,81 +127,19 @@
   h1, h2, h3, h4, h5, h6 {
     @apply font-bold tracking-tight;
     font-family: 'IBM Plex Sans', sans-serif;
-    letter-spacing: -0.02em;
-  }
-  h1 {
-    @apply text-4xl md:text-5xl lg:text-6xl;
-  }
-  h2 {
-    @apply text-3xl md:text-4xl;
-  }
-  h3 {
-    @apply text-2xl md:text-3xl;
-  }
-  button:not(:disabled),
-  [role="button"]:not([aria-disabled="true"]),
-  [type="button"]:not(:disabled),
-  [type="submit"]:not(:disabled),
-  [type="reset"]:not(:disabled),
-  a[href],
-  select:not(:disabled),
-  input[type="checkbox"]:not(:disabled),
-  input[type="radio"]:not(:disabled) {
-    @apply cursor-pointer;
   }
 }
 
 @layer components {
-
-  /* Custom container utility that centers content and adds responsive padding. */
   .container {
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 1rem; /* 16px - mobile padding */
-    padding-right: 1rem;
-  }
-
-  .flex {
-    min-height: 0;
-    min-width: 0;
-  }
-
-  /* Typography utilities */
-  .font-display {
-    font-family: 'IBM Plex Sans', sans-serif;
-    letter-spacing: -0.02em;
-  }
-
-  .font-sans {
-    font-family: 'Roboto', sans-serif;
-  }
-
-  /* Industrial Modernism specific components */
-  .section-divider {
-    @apply h-1 bg-gradient-to-r from-transparent via-accent to-transparent;
-  }
-
-  .card-elevated {
-    @apply bg-card text-card-foreground rounded-sm shadow-lg hover:shadow-2xl transition-shadow duration-300;
+    @apply w-full mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl;
   }
 
   .button-industrial {
-    @apply bg-primary text-primary-foreground px-6 py-3 rounded-sm font-bold tracking-wide hover:opacity-90 transition-opacity duration-200 active:scale-95;
+    @apply bg-primary text-primary-foreground px-6 py-3 rounded-sm font-bold hover:opacity-90 active:scale-95 transition-all;
   }
-
-  @media (min-width: 640px) {
-    .container {
-      padding-left: 1.5rem; /* 24px - tablet padding */
-      padding-right: 1.5rem;
-    }
-  }
-
-  @media (min-width: 1024px) {
-    .container {
-      padding-left: 2rem; /* 32px - desktop padding */
-      padding-right: 2rem;
-      max-width: 1280px; /* Standard content width */
-    }
+  
+  .card-elevated {
+    @apply bg-card text-card-foreground rounded-sm shadow-lg hover:shadow-2xl transition-all duration-300;
   }
 }
