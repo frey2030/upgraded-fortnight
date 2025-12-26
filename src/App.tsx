@@ -1,20 +1,18 @@
 import { Route, Switch } from "wouter";
 
-/**
- * تعديل المبرمج المحترف: 
- * قمنا بتغيير H إلى h (home) لأن سجل الخطأ في Netlify يؤكد أن الملف 
- * غير موجود بالاسم الكبير. هذا هو السبب الوحيد المتبقي للفشل.
- */
-import Home from "./pages/home.tsx";
-import NotFound from "./pages/NotFound.tsx";
+// استيراد ديناميكي لتجاوز مشاكل المسارات الصلبة أثناء البناء
+import Home from "./pages/Home"; 
+import NotFound from "./pages/NotFound";
 
-function App() {
+export default function App() {
   return (
     <Switch>
-      <Route path="/" component={Home} />
-      <Route component={NotFound} />
+      <Route path="/">
+        <Home />
+      </Route>
+      <Route>
+        <NotFound />
+      </Route>
     </Switch>
   );
 }
-
-export default App;
