@@ -1,9 +1,9 @@
 import { Route, Switch } from "wouter";
 
-// استخدام @ يضمن الوصول للمجلد الصحيح بغض النظر عن المسارات النسبية
-// جربنا Home (حرف كبير)، إذا فشل، فغالباً اسم ملفك هو home (حرف صغير)
-import Home from "@/pages/Home"; 
-import NotFound from "@/pages/NotFound";
+// إضافة الامتداد .tsx يحل مشكلة الـ ENOENT في بيئات Linux
+// جربنا Home (حرف كبير)، إذا فشل، تأكد من اسم الملف في GitHub
+import Home from "./pages/Home.tsx"; 
+import NotFound from "./pages/NotFound.tsx";
 
 function App() {
   return (
