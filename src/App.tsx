@@ -1,40 +1,68 @@
 import { Route, Switch } from "wouter";
 
-// كود الصفحة الرئيسية مدمج مباشرة لحل مشكلة الملفات المفقودة
-const Home = () => (
-  <div className="min-h-screen flex flex-col items-center justify-center bg-background text-foreground p-4">
-    <header className="text-center mb-8">
-      <h1 className="text-5xl font-bold timport { Route, Switch } from "wouter";
-
-// المكون الجمالي للهيدر (Navigation)
+// الهيدر الاحترافي
 const Navbar = () => (
-  <nav className="absolute top-0 w-full z-50 p-6 flex justify-between items-center bg-transparent text-white border-b border-white/10">
-    <div><button className="bg-primary px-6 py-2 rounded-sm font-bold text-sm">تواصل معنا</button></div>
+  <nav className="absolute top-0 w-full z-50 p-6 flex justify-between items-center bg-black/20 backdrop-blur-sm text-white border-b border-white/10">
+    <div><button className="bg-[#800020] px-6 py-2 rounded-sm font-bold text-sm hover:bg-red-800 transition-all">تواصل معنا</button></div>
     <div className="hidden md:flex gap-8 text-sm font-medium">
-      <a href="#" className="hover:text-primary transition-colors">اتصل بنا</a>
-      <a href="#" className="hover:text-primary transition-colors">الخدمات</a>
-      <a href="#" className="hover:text-primary transition-colors">المنتجات</a>
-      <a href="#" className="hover:text-primary transition-colors">عن الشركة</a>
-      <a href="#" className="text-primary border-b-2 border-primary">الرئيسية</a>
+      <a href="#" className="hover:text-red-500 transition-colors font-bold">اتصل بنا</a>
+      <a href="#" className="hover:text-red-500 transition-colors font-bold">الخدمات</a>
+      <a href="#" className="hover:text-red-500 transition-colors font-bold">المنتجات</a>
+      <a href="#" className="hover:text-red-500 transition-colors font-bold">عن الشركة</a>
+      <a href="#" className="text-red-600 border-b-2 border-red-600 font-bold">الرئيسية</a>
     </div>
-    <div className="text-right">
-      <h1 className="text-xl font-black tracking-tighter">تاج الجديدة</h1>
-      <p className="text-[10px] opacity-70">طلاء ومستلزمات السيارات</p>
+    <div className="text-right flex items-center gap-3">
+      <div>
+        <h1 className="text-xl font-black tracking-tighter leading-none">تاج الجديدة</h1>
+        <p className="text-[10px] opacity-70">طلاء ومستلزمات السيارات</p>
+      </div>
+      <div className="bg-red-700 w-8 h-8 flex items-center justify-center font-bold">ت</div>
     </div>
   </nav>
 );
 
-// مكون الـ Hero (التصميم الرئيسي في الصورة 2)
+// قسم البطولية (Hero Section) مطابق للصورة رقم 2
 const Hero = () => (
-  <div className="relative min-h-screen flex items-center justify-end pr-[10%] bg-black overflow-hidden">
-    {/* الخلفية - تأكد من رفع صورة مناسبة أو سنستخدم خلفية داكنة */}
-    <div className="absolute inset-0 bg-gradient-to-l from-black/80 via-black/40 to-transparent z-10" />
-    <div className="absolute inset-0 grayscale opacity-40 bg-[url('https://images.unsplash.com/photo-1590564310418-66304f55a2c2?q=80&w=2070')] bg-cover bg-center" />
+  <div className="relative min-h-screen flex items-center justify-end pr-[10%] bg-black overflow-hidden antialiased">
+    <div className="absolute inset-0 bg-gradient-to-l from-black via-black/40 to-transparent z-10" />
+    <div 
+      className="absolute inset-0 grayscale opacity-50 bg-cover bg-center transition-transform duration-[20s] hover:scale-110" 
+      style={{ backgroundImage: "url('https://images.unsplash.com/photo-1590564310418-66304f55a2c2?q=80&w=2070')" }}
+    />
 
     <div className="relative z-20 text-right max-w-2xl text-white">
-      <div className="w-20 h-1 bg-primary mb-6 ml-auto" />
-      <h1 className="text-6xl md:text-8xl font-black mb-6 leading-tight">
+      <div className="w-16 h-1 bg-red-700 mb-6 ml-auto" />
+      <h1 className="text-5xl md:text-7xl font-black mb-6 leading-[1.1] drop-shadow-2xl">
         شركة تاج الجديدة
+      </h1>
+      <p className="text-lg md:text-xl opacity-80 mb-10 font-medium leading-relaxed max-w-xl ml-auto">
+        أكثر من ثلاثة عقود من الخبرة في توفير أفضل طلاء ومستلزمات السيارات في ليبيا
+      </p>
+      <div className="flex gap-4 justify-end">
+        <button className="bg-red-800 hover:bg-red-700 text-white px-8 py-4 rounded-sm font-bold transition-all transform hover:-translate-y-1 active:scale-95 shadow-xl">
+          استكشف منتجاتنا
+        </button>
+        <button className="border-2 border-white hover:bg-white/10 text-white px-10 py-4 rounded-sm font-bold transition-all shadow-lg">
+          عن الشركة
+        </button>
+      </div>
+    </div>
+  </div>
+);
+
+export default function App() {
+  return (
+    <div className="font-sans">
+      <Navbar />
+      <Switch>
+        <Route path="/" component={Hero} />
+        <Route>
+          <div className="flex items-center justify-center min-h-screen">404 - الصفحة غير موجودة</div>
+        </Route>
+      </Switch>
+    </div>
+  );
+}        شركة تاج الجديدة
       </h1>
       <p className="text-xl md:text-2xl opacity-90 mb-10 font-light leading-relaxed">
         أكثر من ثلاثة عقود من الخبرة في توفير أفضل طلاء ومستلزمات السيارات في ليبيا
