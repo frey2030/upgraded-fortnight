@@ -1,14 +1,15 @@
 import { Route, Switch } from "wouter";
 
-// إضافة الامتداد .tsx يحل مشكلة الـ ENOENT في بيئات Linux
-// جربنا Home (حرف كبير)، إذا فشل، تأكد من اسم الملف في GitHub
-import Home from "./pages/Home.tsx"; 
+// استيراد الصفحات بمسارات مباشرة وامتدادات واضحة
+// ملاحظة: إذا فشل البناء، تأكد فوراً هل الملف في GitHub اسمه Home.tsx أم home.tsx
+import Home from "./pages/Home.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 function App() {
   return (
     <Switch>
       <Route path="/" component={Home} />
+      {/* أي مسار غير معروف سيذهب لصفحة 404 */}
       <Route component={NotFound} />
     </Switch>
   );
