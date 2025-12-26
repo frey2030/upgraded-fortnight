@@ -1,18 +1,14 @@
 import { Route, Switch } from "wouter";
 
-// استيراد ديناميكي لتجاوز مشاكل المسارات الصلبة أثناء البناء
-import Home from "./pages/Home"; 
-import NotFound from "./pages/NotFound";
+// استيراد الصفحات من مجلد src مباشرة
+import Home from "./Home"; 
+import NotFound from "./NotFound";
 
 export default function App() {
   return (
     <Switch>
-      <Route path="/">
-        <Home />
-      </Route>
-      <Route>
-        <NotFound />
-      </Route>
+      <Route path="/" component={Home} />
+      <Route component={NotFound} />
     </Switch>
   );
 }
