@@ -1,32 +1,21 @@
+import { Link } from "wouter";
+
 export default function Header() {
   return (
-    <header className="w-full bg-gradient-to-l from-[#3b0a1a] to-black text-white">
-      <div className="max-w-7xl mx-auto flex items-center justify-between py-4 px-6">
-        
-        <button className="bg-[#7b0f24] px-6 py-2 rounded text-sm font-semibold">
-          تواصل معنا
-        </button>
+    <header className="sticky top-0 z-50 w-full bg-gradient-to-r from-[#4b0f1b] to-[#7a1d2b]">
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4">
+        <Link href="/" className="text-lg font-bold text-white">
+          تاج الجديدة
+        </Link>
 
-        <nav className="flex gap-8 text-sm">
-          <a href="#">الرئيسية</a>
-          <a href="#">عن الشركة</a>
-          <a href="#">المنتجات</a>
-          <a href="#">الخدمات</a>
-          <a href="#">اتصل بنا</a>
+        <nav className="hidden gap-6 md:flex">
+          <Link href="/" className="text-white hover:opacity-80">الرئيسية</Link>
+          <Link href="/about" className="text-white hover:opacity-80">من نحن</Link>
+          <Link href="/services" className="text-white hover:opacity-80">الخدمات</Link>
+          <Link href="/products" className="text-white hover:opacity-80">المنتجات</Link>
+          <Link href="/contact" className="text-white hover:opacity-80">تواصل معنا</Link>
         </nav>
-
-        <div className="flex items-center gap-3">
-          <div className="bg-[#7b0f24] w-10 h-10 flex items-center justify-center font-bold">
-            ت
-          </div>
-          <div className="text-right">
-            <div className="font-bold">تاج الجديدة</div>
-            <div className="text-xs opacity-70">طلاء ومستلزمات السيارات</div>
-          </div>
-        </div>
-
       </div>
     </header>
   );
 }
-
